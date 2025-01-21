@@ -77,34 +77,80 @@
     <main>
         <aside>
             <ul>
-                <li><a href="#numpy-append">numpy.append</a></li>
-                <li><a href="#numpy-delete">numpy.delete</a></li>
-                <li><a href="#numpy-insert">numpy.insert</a></li>
+                <li><a href="#generate_randomizations">generate_randomizations</a></li>
+                <li><a href="#generate_randomizations_mc">generate_randomizations_mc</a></li>
+                <li><a href="#randomization_test">randomization_test</a></li>
                 <!-- Add more links as needed -->
             </ul>
         </aside>
         <section>
             <h1>Documentation</h1>
-            <div class="function" id="numpy-append">
-                <h2>numpy.append</h2>
-                <p><strong>Inputs:</strong> array, values, axis (optional)</p>
-                <p><strong>Returns:</strong> A copy of the array with values appended to axis.</p>
+            <div class="function" id="generate_randomizations">
+                <h2>generate_randomizations</h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>n_units:</b> An integer specifying the total number of experimental units. </ol> 
+                <ol class="input-output"> <b>n_treated:</b> An integer specifying the number of units to be assigned to treatment. </ol> 
+                <ol class="input-output"> <b>X:</b> A numeric matrix of covariates used for balance checking. Cannot be \code{NULL}. </ol> 
+                <ol class="input-output"> <b>randomization_accept_prob:</b> A numeric value between 0 and 1 specifying the probability threshold for accepting randomizations based on balance. </ol> 
+                <ol class="input-output"> <b>threshold_func:</b> A 'JAX' function that computes a balance measure for each randomization. Only used for Monte Carlo sampling. </ol> 
+                <ol class="input-output"> <b>max_draws:</b> An integer specifying the maximum number of randomizations to draw in Monte Carlo sampling. </ol> 
+                <ol class="input-output"> <b>batch_size:</b> An integer specifying batch size for Monte Carlo processing. </ol> 
+                <ol class="input-output"> <b>randomization_type:</b> A string specifying the type of randomization: either \code{"exact"} or \code{"monte_carlo"}. </ol> 
+                <ol class="input-output"> <b>approximate_inv:</b> A logical value indicating whether to use an approximate inverse. </ol>
+                <ol class="input-output"> <b>file:</b> A string specifying where to save candidate randomizations (if saving, not returning). </ol> 
+                <ol class="input-output"> <b>return_type:</b> A string specifying the format of the returned randomizations and balance measures. Allowed values are \code{"R"} for base R objects (e.g., \code{matrix}, \code{numeric}) or \code{"jax"} for 'JAX' arrays. Default is \code{"R"}. </ol> 
+                <ol class="input-output"> <b>verbose:</b> A logical value indicating whether to print progress information. Default is \code{TRUE}. </ol> 
+                <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
+                <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
+                <div class="shaded">Returns:</div>
+                <ol class="input-output">A copy of the array with values appended to axis.</ol>
             </div>
-            <div class="function" id="numpy-delete">
-                <h2>numpy.delete</h2>
-                <p><strong>Inputs:</strong> array, obj, axis (optional)</p>
-                <p><strong>Returns:</strong> A new array with sub-arrays along an axis deleted.</p>
+            <div class="function" id="generate_randomizations_mc">
+                <h2>generate_randomizations_mc</h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>n_units:</b> An integer specifying the total number of experimental units. </ol> 
+                <ol class="input-output"> <b>n_treated:</b> An integer specifying the number of units to be assigned to treatment. </ol> 
+                <ol class="input-output"> <b>X:</b> A numeric matrix of covariates used for balance checking. Cannot be NULL. </ol> 
+                <ol class="input-output"> <b>randomization_accept_prob:</b> A numeric value between 0 and 1 specifying the probability threshold for accepting randomizations based on balance. Default is 1. </ol> 
+                <ol class="input-output"> <b>threshold_func:</b> A JAX function that computes a balance measure for each randomization. Must be vectorized using \code{jax$vmap} with \code{in_axes = list(NULL, 0L, NULL, NULL)}, and inputs covariates (matrix of X), treatment_assignment (vector of 0s and 1s), n0 (scalar), n1 (scalar). Default is \code{VectorizedFastHotel2T2} which uses Hotelling's T-squared statistic. </ol> 
+                <ol class="input-output"> <b>max_draws:</b> An integer specifying the maximum number of randomizations to draw. </ol> 
+                <ol class="input-output"> <b>batch_size:</b> An integer specifying how many randomizations to process at once. Lower values use less memory but may be slower. </ol> 
+                <ol class="input-output"> <b>approximate_inv:</b> A logical value indicating whether to use an approximate inverse (diagonal of the covariance matrix) instead of the full matrix inverse when computing balance metrics. This can speed up computations for high-dimensional covariates. Default is \code{TRUE}. </ol> 
+                <ol class="input-output"> <b>verbose:</b> A logical value indicating whether to print detailed information about batch processing progress and GPU memory usage. Default is \code{FALSE}. </ol> 
+                <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
+                <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
+                <div class="shaded">Returns:</div>
+                <ol class="input-output">A copy of the array with values appended to axis.</ol>
             </div>
-            <div class="function" id="numpy-insert">
-                <h2>numpy.insert</h2>
-                <p><strong>Inputs:</strong> array, obj, values, axis (optional)</p>
-                <p><strong>Returns:</strong> A new array with values inserted along the given axis before the given indices.</p>
+            <div class="function" id="randomization_test">
+              <h2>randomization_test</h2>
+              <div class="shaded">Parameters:</div>
+              <ol class="input-output"> <b>obsW:</b> A numeric vector where 0's correspond to control units and 1's to treated units. </ol> 
+              <ol class="input-output"> <b>obsY:</b> An optional numeric vector of observed outcomes. If not provided, the function assumes a NULL value. </ol> 
+              <ol class="input-output"> <b>X:</b> A numeric matrix of covariates. </ol> 
+              <ol class="input-output"> <b>alpha:</b> The significance level for the test. Default is 0.05. </ol> 
+              <ol class="input-output"> <b>candidate_randomizations:</b> A numeric matrix of candidate randomizations. </ol> 
+              <ol class="input-output"> <b>candidate_randomizations_array:</b> An optional 'JAX' array of candidate randomizations. If not provided, the function coerces candidate_randomizations into a 'JAX' array. </ol> 
+              <ol class="input-output"> <b>n0_array:</b> An optional array specifying the number of control units. </ol> 
+              <ol class="input-output"> <b>n1_array:</b> An optional array specifying the number of treated units. </ol> 
+              <ol class="input-output"> <b>randomization_accept_prob:</b> A numeric scalar or vector of probabilities for accepting each randomization. </ol> 
+              <ol class="input-output"> <b>findFI:</b> A logical value indicating whether to find the fiducial interval. Default is FALSE. </ol> 
+              <ol class="input-output"> <b>c_initial:</b> A numeric value representing the initial criterion for the randomization. Default is 2. </ol> 
+              <ol class="input-output"> <b>max_draws:</b> An integer specifying the maximum number of candidate randomizations to generate (or to consider) for the test when \code{randomization_type = "monte_carlo"}. Default is \code{1e6}. </ol> 
+              <ol class="input-output"> <b>batch_size:</b> An integer specifying the batch size for Monte Carlo sampling. Batches are processed one at a time for memory efficiency. Default is \code{1e5}. </ol> 
+              <ol class="input-output"> <b>randomization_type:</b> A string specifying the type of randomization for the test. Allowed values are "exact" or "monte_carlo". Default is "monte_carlo". </ol> 
+              <ol class="input-output"> <b>approximate_inv:</b> A logical value indicating whether to use an approximate inverse (diagonal of the covariance matrix) instead of the full matrix inverse when computing balance metrics. This can speed up computations for high-dimensional covariates. Default is \code{TRUE}. </ol> 
+              <ol class="input-output"> <b>file:</b> A character string specifying the path (including filename) where candidate randomizations will be saved or loaded from. If \code{NULL}, randomizations remain in memory. Default is NULL. </ol> 
+              <ol class="input-output"> <b>verbose:</b> A logical value indicating whether to print progress information. Default is \code{TRUE}. </ol> 
+              <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
+              <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
+              <div class="shaded">Returns:</div>
+              <ol class="input-output">A copy of the array with values appended to axis.</ol>
             </div>
-            <!-- Add more function descriptions as needed -->
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 NumPy Developers</p>
+        <p>&copy; 2025 fastrerandomize Developers</p>
     </footer>
 </body>
 </html>
