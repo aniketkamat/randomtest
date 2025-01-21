@@ -103,7 +103,9 @@
                 <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
                 <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
                 <div class="shaded">Returns:</div>
-                <ol class="input-output">A copy of the array with values appended to axis.</ol>
+                <ol class="input-output"> <b>assignments:</b> An array where each row represents one possible treatment assignment vector containing the accepted randomizations. </ol> 
+                <ol class="input-output"> <b>balance_measures:</b> A numeric vector containing the balance measure for each corresponding randomization. </ol> 
+                <ol class="input-output"> <b>fastrr_env:</b> The fastrerandomize environment. </ol> <ol class="input-output"> <b>file_output:</b> If file is specified, results are saved to the given file path instead of being returned. </ol>
             </div>
             <div class="function" id="generate_randomizations_mc">
                 <h2>generate_randomizations_mc</h2>
@@ -120,7 +122,8 @@
                 <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
                 <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
                 <div class="shaded">Returns:</div>
-                <ol class="input-output">A copy of the array with values appended to axis.</ol>
+                <ol class="input-output"> <b>candidate_randomizations:</b> An array of randomization vectors. </ol> 
+                <ol class="input-output"> <b>M_candidate_randomizations:</b> An array of their balance measures. </ol>
             </div>
             <div class="function" id="randomization_test">
               <h2>randomization_test</h2>
@@ -145,7 +148,9 @@
               <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via \code{reticulate}. Default is \code{"fastrerandomize"}. </ol> 
               <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If \code{TRUE}, an error is thrown if the environment is not found. Default is \code{TRUE}. </ol>
               <div class="shaded">Returns:</div>
-              <ol class="input-output">A copy of the array with values appended to axis.</ol>
+              <ol class="input-output"> <b>p_value:</b> A numeric value or vector representing the p-value of the test (or the expected p-value under the prior structure specified in the function inputs). </ol> 
+              <ol class="input-output"> <b>FI:</b> A numeric vector representing the fiducial interval if \code{findFI=TRUE}. </ol> 
+              <ol class="input-output"> <b>tau_obs:</b> A numeric value or vector representing the estimated treatment effect(s). </ol> <ol class="input-output"> <b>fastrr_env:</b> The fastrerandomize environment. </ol>
             </div>
         </section>
     </main>
