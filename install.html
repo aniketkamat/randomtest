@@ -44,14 +44,13 @@
         }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Install</a></li>
                 <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="install.html">Install</a></li>
                 <li><a href="#">Learn</a></li>
                 <li><a href="#">Community</a></li>
                 <li><a href="#">About Us</a></li>
@@ -62,21 +61,22 @@
         </nav>
     </header>
     <main>
-        <aside>
-            <ul>
-                <li><a href="#">build_backend</a></li>
-                <li><a href="#">generate_randomizations</a></li>
-                <li><a href="#">generate_randomizations_mc</a></li>
-                <li><a href="#">randomization_test</a></li>
-            </ul>
-        </aside>
-        <section>
-            <h1>Documentation</h1>
-            <p>This is the documentation page for fastrerandomize. Click the links on the sidebar to find more information about each function. </p>
-        </section>
+        <div class="install-box">
+            <h1>Install fastrerandomize</h1>
+            <p>To install and load fastrerandomize, follow these steps:</p>
+            <ol>
+                <li>Open your terminal in your preferred R editor </li>
+                <li>If you haven't installed devtools already, begin by doing so:</li>
+                    <pre><code>install.packages("devtools")</code></pre>
+                <li>Install the package from the GitHub </li>
+                    <pre><code>devtools::install_github(repo = "cjerzak/fastrerandomize-software/fastrerandomize")</code></pre>
+                <li>Load the package</li>
+                    <pre><code>library(fastrerandomize)</code></pre>
+                <li>When running code for the first time, create the computational environment</li>
+                    <pre><code>fastrerandomize::build_backend()</code></pre>
+                <li>Rerandomize!</li>
+            </ol>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 (Name for group or we can add each person's name) </p>
-    </footer>
 </body>
 </html>
