@@ -1,1 +1,79 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fastrerandomize Install</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Times New Roman, Times New Roman;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #918e8e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .install-box {
+            background-color: #D3D3D3;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .install-box h1, .install-box p {
+            margin: 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="install.html">Install</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>fastrerandomize</h1>
+    </header>
+    <main>
+        <div class="install-box">
+            <h1>Install fastrerandomize</h1>
+            <p>To install and load fastrerandomize, follow these steps:</p>
+            <ol>
+                <li>Open your terminal in your preferred R editor. </li>
+                <li>If you haven't installed devtools already, begin by doing so:</li>
+                    <pre><code>install.packages("devtools")</code></pre>
+                <li>Install the package from the GitHub:</li>
+                    <pre><code>devtools::install_github(repo = "cjerzak/fastrerandomize-software/fastrerandomize")</code></pre>
+                <li>Load the package:</li>
+                    <pre><code>library(fastrerandomize)</code></pre>
+                <li>When running code for the first time, create the computational environment:</li>
+                    <pre><code>fastrerandomize::build_backend()</code></pre>
+                <li>Rerandomize!</li>
+            </ol>
+        </div>
+    </main>
+</body>
+</html>
