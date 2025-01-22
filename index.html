@@ -6,10 +6,32 @@
     <title>fastrerandomize</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+        body.light-mode {
+            background-color: white;
+            color: black;
             font-family: Times New Roman, Times New Roman;
             margin: 0;
             padding: 0;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+            font-family: Times New Roman, Times New Roman;
+            margin: 0;
+            padding: 0;
+        }
+        .highlight {
+            background-color: grey;
+        }
+        #themeToggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         header {
             background-color: #918e8e;
@@ -49,12 +71,10 @@
         .feature h3 {
             margin-top: 0;
         }
-        .highlight {
-            background-color: blue;
-        }
     </style>
 </head>
 <body>
+    <button id="themeToggle" onclick="toggleTheme()">Toggle Theme</button>
     <div>
         <input type = "text" id="searchQuery" placeholder="Search...">
         <button onclick="searchPage()">Search</button>
