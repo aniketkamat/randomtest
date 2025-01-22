@@ -52,6 +52,10 @@
     </style>
 </head>
 <body>
+    <div>
+        <input type = "text" id="searchQuery" placeholder="Search...">
+        <button onclick="searchPage()">Search</button>
+    </div>
     <header>
         <nav>
             <ul>
@@ -68,35 +72,36 @@
     </header>
     <main>
         <section class="release-announcement">
-            <h2>NumPy 2.2.0 released!</h2>
-            <p>2024-12-08</p>
+            <h2>fastrerandomize released!</h2>
+            <p>2024-01-17</p>
         </section>
         <section class="features">
             <div class="feature">
-                <h3>Powerful N-dimensional arrays</h3>
-                <p>Fast and versatile, the NumPy vectorization, indexing, and broadcasting concepts are the de-facto standards of array computing today.</p>
+                <h3>Tools</h3>
+                <p>Employs JAX backend, batched processing, and GPU acceleration to allow for use in cases where the sample size or number of covariates is very large.</p>
             </div>
             <div class="feature">
-                <h3>Numerical computing tools</h3>
-                <p>NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more.</p>
+                <h3>Improvements</h3>
+                <p>Allows for substantial performance gains and use in cases where the number of covariates is very large.</p>
             </div>
             <div class="feature">
                 <h3>Open source</h3>
-                <p>Distributed under a liberal <a href="#">BSD license</a>, NumPy is developed and maintained publicly on <a href="#">GitHub</a> by a vibrant, responsive, and diverse community.</p>
+                <p>Distributed under a <a href="#">GPL-3 license</a>, fastrerandomize is developed and maintained publicly on <a href="https://github.com/cjerzak/fastrerandomize-software?tab=readme-ov-file">GitHub</a>.</p>
             </div>
             <div class="feature">
-                <h3>Interoperable</h3>
-                <p>NumPy supports a wide range of hardware and computing platforms, and plays well with distributed, GPU, and sparse array libraries.</p>
+                <h3>Balanced Assignment</h3>
+                <p>Generates pools of acceptable randomizations based on a given acceptance probability.</p>
             </div>
             <div class="feature">
-                <h3>Performant</h3>
-                <p>The core of NumPy is well-optimized C code. Enjoy the flexibility of Python with the speed of compiled code.</p>
+                <h3>Tests and Thresholds</h3>
+                <p>Conducts exact rerandomization tests and computes optimal rerandomization acceptance thresholds.</p>
             </div>
             <div class="feature">
-                <h3>Easy to use</h3>
-                <p>NumPy's high level syntax makes it accessible and productive for programmers from any background or experience level.</p>
+                <h3>Applications</h3>
+                <p>Proven improvement over existing software in applications to economic and geographical experiments.</p>
             </div>
         </section>
     </main>
+    <script src="search.js"></script>
 </body>
 </html>
