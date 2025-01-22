@@ -31,3 +31,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var savedTheme = localStorage.getItem('theme') || 'light';
     document.body.classList.add(savedTheme + '-mode');
 });
+document.addEventListener('DOMContentLoaded', function () {
+  let contentContainer = document.getElementById('content-container');
+  let loader = document.getElementById('loader');
+
+function loadMoreContent() {
+    // Show the loader
+    loader.style.display = 'block';
+
+    // Simulate an AJAX request (you can replace this with actual data fetching)
+    setTimeout(() => {
+      for (let i = 0; i < 5; i++) {
+        let newItem = document.createElement('div');
+        newItem.textContent = `New Item ${Math.random()}`;
+        contentContainer.appendChild(newItem);
+      }
+
+      // Hide the loader
+      loader.style.display = 'none';
+    }, 1000);
+  }
+
+  // Event listener for scrolling
+  window.addEventListener('scroll', () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+      loadMoreContent();
+    }
+  });
+});
