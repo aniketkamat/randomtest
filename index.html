@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #DADCDD;
+            background-color: #EAECEF;
             color: black;
             font-family: Times New Roman, Times New Roman;
             margin: 0;
             padding: 0;
         }
         .highlight {
-            background-color: grey;
+            background-color: #C3C5C8;
         }
         header {
-            background-color: #918e8e;
+            background-color: #4B4F59;
             color: white;
             padding: 20px;
             text-align: center;
@@ -28,21 +28,23 @@
             align-items: center;
             justify-content: space-between;
         }
-        .nav img {
-            width: 10px; 
-            height: 10px; 
-        }
         nav ul {
             list-style-type: none;
             padding: 0;
             display: flex;
         }
         nav ul li {
-            margin: 0 10px;
+            margin: 0 15px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #6D717C;
+            border-radius: 5px;
         }
         main {
             padding: 20px;
@@ -53,10 +55,10 @@
             justify-content: space-between;
         }
         .feature {
-            background-color: #F0F0F0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
+            background-color: #F6F7F8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
             padding: 20px;
             width: 30%;
         }
