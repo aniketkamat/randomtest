@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Times New Roman, Times New Roman;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #F9FAFB; 
+            color: #111827; 
         }
         header {
-            background-color: #918e8e;
+            background-color: #1E293B; 
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 20px;   
+            font-size: 20px;
         }
         nav ul {
             list-style-type: none;
@@ -29,6 +31,11 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #2563EB;
+            padding: 5px;
+            border-radius: 5px;
         }
         main {
             padding: 20px;
@@ -48,12 +55,12 @@
             display: block;
             padding: 10px;
             text-decoration: none;
-            color: black;
+            color: #111827; 
         }
         aside ul li a:hover,
         aside ul li a:active {
-            border-left: 5px solid blue;
-            background-color: #f0f0f0;
+            border-left: 5px solid #2563EB;
+            background-color: #F0F0F0;
         }
         section {
             float: right;
@@ -62,9 +69,18 @@
         section h1 {
             margin-top: 0;
         }
+        .code-cell {
+            background-color: #1E293B;
+            color: white;
+            font-family: Consolas, monospace;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
         footer {
             clear: both;
-            background-color: #918e8e;
+            background-color: #1E293B; 
             color: white;
             text-align: center;
             padding: 10px;
