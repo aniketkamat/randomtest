@@ -1,1 +1,142 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fastrerandomize Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Times New Roman, Times New Roman;
+            margin: 0;
+            padding: 0;
+            background-color: #F9FAFB; 
+            color: #111827; 
+        }
+        header {
+            background-color: #1E293B; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10 px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #2563EB;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+        }
+        aside {
+            float: left;
+            top: 60px;
+            position: sticky;        
+            width: 20%;       
+        }
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        aside ul li {
+            margin: 10px 0;
+        }
+        aside ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #111827; 
+        }
+        aside ul li a:hover,
+        aside ul li a:active {
+            border-left: 5px solid #2563EB;
+            background-color: #F0F0F0;
+        }
+        section {
+            float: right;
+            width: 75%;
+        }
+        section h1 {
+            font-size: 30px;
+            margin-top: 0;
+        }
+        .code-cell {
+            background-color: #1E293B;
+            color: white;
+            font-family: Consolas, monospace;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        footer {
+            clear: both;
+            background-color: #1E293B; 
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="install.html">Install</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+        <h1>fastrerandomize</h1>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="#build_backend">build_backend</a></li>
+                <li><a href="#fastrerandomize_class">fastrerandomize_class</a></li>
+            </ul>
+        </aside>
+        <section>
+            <h1>Documentation</h1>
+            <div class="function" id="build_backend">
+            <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_BuildBackend.R">build_backend</a></h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>conda_env:</b> Name of the conda environment in which to place the backends. Default value is <code>fastrerandomize</code>. </ol> 
+                <ol class="input-output"> <b>conda:</b> The path to a conda executable. Using <code>auto</code> allows reticulate to attempt to automatically find an appropriate conda binary. Default value is <code>auto</code>. </ol>
+                <div class="shaded">Returns:</div>
+                <ol class="input-output"> <b>NULL:</b> Invisibly returns NULL; this function is used for its side effects of creating and configuring a conda environment for <code>fastrerandomize</code>. This function requires an Internet connection. </ol>
+            </div>
+            <div class="function" id="fastrerandomize_class">
+            <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_S3Constructors.R">fastrerandomize_class</a></h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>randomizations:</b> A matrix or array where each row (or slice) represents one randomization.</ol> 
+                <ol class="input-output"> <b>balance:</b> A numeric vector or similar object holding balance statistics for each randomization, or <code>NULL</code>. if not applicable.</ol>
+                <ol class="input-output"> <b>fastrr_env :</b> Associated <code>fastrr_env</code>. environment.</ol> 
+                <ol class="input-output"> <b>call:</b> The function call, if you wish to store it for reference (optional).</ol> 
+                <div class="shaded">Returns:</div>
+                <ol class="input-output"> <b>object:</b> An object of class <code>fastrerandomize_randomizations</code> </ol>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 fastrerandomize developers</p> 
+    </footer>
+</body>
+</html>
