@@ -110,8 +110,8 @@
         <aside>
             <ul>
                 <li><a href="#build_backend">build_backend</a></li>
-                <li><a href="#generate_randomizations">generate_randomizations</a></li>
                 <li><a href="#fastrerandomize_class">fastrerandomize_class</a></li>
+                <li><a href="#generate_randomizations">generate_randomizations</a></li>
                 <li><a href="#randomization_test">randomization_test</a></li>
             </ul>
         </aside>
@@ -124,6 +124,16 @@
                 <ol class="input-output"> <b>conda:</b> The path to a conda executable. Using <code>auto</code> allows reticulate to attempt to automatically find an appropriate conda binary. Default value is <code>auto</code>. </ol>
                 <div class="shaded">Returns:</div>
                 <ol class="input-output"> <b>NULL:</b> Invisibly returns NULL; this function is used for its side effects of creating and configuring a conda environment for <code>fastrerandomize</code>. This function requires an Internet connection. </ol>
+            </div>
+            <div class="function" id="fastrerandomize_class">
+            <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_S3Constructors.R">fastrerandomize_class</a></h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>randomizations:</b> A matrix or array where each row (or slice) represents one randomization.</ol> 
+                <ol class="input-output"> <b>balance:</b> A numeric vector or similar object holding balance statistics for each randomization, or <code>NULL</code>. if not applicable.</ol>
+                <ol class="input-output"> <b>fastrr_env :</b> Associated <code>fastrr_env</code>. environment.</ol> 
+                <ol class="input-output"> <b>call:</b> The function call, if you wish to store it for reference (optional).</ol> 
+                <div class="shaded">Returns:</div>
+                <ol class="input-output"> <b>object:</b> An object of class <code>fastrerandomize_randomizations</code> </ol>
             </div>
             <div class="function" id="generate_randomizations">
                 <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_GenerateRandomizations.R">generate_randomizations</a></h2>
@@ -146,16 +156,6 @@
                 <ol class="input-output"> <b>assignments:</b> An array where each row represents one possible treatment assignment vector containing the accepted randomizations. </ol> 
                 <ol class="input-output"> <b>balance_measures:</b> A numeric vector containing the balance measure for each corresponding randomization. </ol> 
                 <ol class="input-output"> <b>fastrr_env:</b> The fastrerandomize environment. </ol> <ol class="input-output"> <b>file_output:</b> If file is specified, results are saved to the given file path instead of being returned. </ol>
-            </div>
-            <div class="function" id="fastrerandomize_class">
-            <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_S3Constructors.R">fastrerandomize_class</a></h2>
-                <div class="shaded">Parameters:</div>
-                <ol class="input-output"> <b>randomizations:</b> A matrix or array where each row (or slice) represents one randomization.</ol> 
-                <ol class="input-output"> <b>balance:</b> A numeric vector or similar object holding balance statistics for each randomization, or <code>NULL</code>. if not applicable.</ol>
-                <ol class="input-output"> <b>fastrr_env :</b> Associated <code>fastrr_env</code>. environment.</ol> 
-                <ol class="input-output"> <b>call:</b> The function call, if you wish to store it for reference (optional).</ol> 
-                <div class="shaded">Returns:</div>
-                <ol class="input-output"> <b>object:</b> An object of class <code>fastrerandomize_randomizations</code> </ol>
             </div>
             <div class="function" id="randomization_test">
               <h2><a href="https://github.com/cjerzak/fastrerandomize-software/blob/main/fastrerandomize/R/FRR_RandomizationTest.R">randomization_test</a></h2>
