@@ -8,11 +8,15 @@
     <style>
         body {
             font-family: Times New Roman, Times New Roman;
+            color: black;
             margin: 0;
             padding: 0;
         } 
+        .highlight {
+            background-color: #C3C5C8;
+        }
         header {
-            background-color: #918e8e;
+            background-color: #1E293B;
             color: white;
             padding: 20px;
             text-align: center;
@@ -29,6 +33,13 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 5px 10 px;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #2563EB;
+            padding: 5px;
+            border-radius: 5px;
         }
         main {
             padding: 20px;
