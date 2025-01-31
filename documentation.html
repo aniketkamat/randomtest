@@ -96,6 +96,14 @@
         </aside>
         <section>
             <h1>Documentation</h1>
+            <div class="function" id="build_backend">
+            <h2>build_backend</h2>
+                <div class="shaded">Parameters:</div>
+                <ol class="input-output"> <b>conda_env:</b>(default = `"fastrerandomize"`) Name of the conda environment in which to place the backends.</ol> 
+                <ol class="input-output"> <b>conda:</b> (default = `auto`) The path to a conda executable. Using `"auto"` allows reticulate to attempt to automatically find an appropriate conda binary. </ol>
+                <div class="shaded">Returns:</div>
+                <ol class="input-output"> <b>NULL:</b> Invisibly returns NULL; this function is used for its side effects of creating and configuring a conda environment for `fastrerandomize`. This function requires an Internet connection. </ol>
+            </div>
             <div class="function" id="generate_randomizations">
                 <h2>generate_randomizations</h2>
                 <div class="shaded">Parameters:</div>
@@ -118,24 +126,16 @@
                 <ol class="input-output"> <b>balance_measures:</b> A numeric vector containing the balance measure for each corresponding randomization. </ol> 
                 <ol class="input-output"> <b>fastrr_env:</b> The fastrerandomize environment. </ol> <ol class="input-output"> <b>file_output:</b> If file is specified, results are saved to the given file path instead of being returned. </ol>
             </div>
-            <div class="function" id="generate_randomizations_mc">
-                <h2>generate_randomizations_mc</h2>
+            <div class="function" id="fastrerandomize_class">
+            <h2>fastrerandomize_class</h2>
                 <div class="shaded">Parameters:</div>
-                <ol class="input-output"> <b>n_units:</b> An integer specifying the total number of experimental units. </ol> 
-                <ol class="input-output"> <b>n_treated:</b> An integer specifying the number of units to be assigned to treatment. </ol> 
-                <ol class="input-output"> <b>X:</b> A numeric matrix of covariates used for balance checking. Cannot be NULL. </ol> 
-                <ol class="input-output"> <b>randomization_accept_prob:</b> A numeric value between 0 and 1 specifying the probability threshold for accepting randomizations based on balance. Default is 1. </ol> 
-                <ol class="input-output"> <b>threshold_func:</b> A JAX function that computes a balance measure for each randomization. Must be vectorized using \<code>jax$vmap</code> with <code>in_axes = list(NULL, 0L, NULL, NULL)</code>, and inputs covariates (matrix of X), treatment_assignment (vector of 0s and 1s), n0 (scalar), n1 (scalar). Default is <code>VectorizedFastHotel2T2</code> which uses Hotelling's T-squared statistic. </ol> 
-                <ol class="input-output"> <b>max_draws:</b> An integer specifying the maximum number of randomizations to draw. </ol> 
-                <ol class="input-output"> <b>batch_size:</b> An integer specifying how many randomizations to process at once. Lower values use less memory but may be slower. </ol> 
-                <ol class="input-output"> <b>approximate_inv:</b> A logical value indicating whether to use an approximate inverse (diagonal of the covariance matrix) instead of the full matrix inverse when computing balance metrics. This can speed up computations for high-dimensional covariates. Default is <code>True</code>. </ol> 
-                <ol class="input-output"> <b>verbose:</b> A logical value indicating whether to print detailed information about batch processing progress and GPU memory usage. Default is <code>False</code>. </ol> 
-                <ol class="input-output"> <b>conda_env:</b> A character string specifying the name of the conda environment to use via <code>reticulate</code>. Default is <code>fastrerandomize</code>. </ol> 
-                <ol class="input-output"> <b>conda_env_required:</b> A logical indicating whether the specified conda environment must be strictly used. If <code>True</code>, an error is thrown if the environment is not found. Default is <code>True</code>. </ol>
+                <ol class="input-output"> <b>randomizations:</b>A matrix or array where each row (or slice) represents one randomization.</ol> 
+                <ol class="input-output"> <b>balance:</b>A numeric vector or similar object holding balance statistics for each randomization, or \code{NULL} if not applicable.</ol>
+                <ol class="input-output"> <b>fastrr_env :</b>Associated \code{fastrr_env} environment.</ol> 
+                <ol class="input-output"> <b>call:</b>The function call, if you wish to store it for reference (optional).</ol> 
                 <div class="shaded">Returns:</div>
-                <ol class="input-output"> <b>candidate_randomizations:</b> An array of randomization vectors. </ol> 
-                <ol class="input-output"> <b>M_candidate_randomizations:</b> An array of their balance measures. </ol>
-            </div> 
+                <ol class="input-output"> <b>object:</b>An object of class \code{fastrerandomize_randomizations} </ol>
+            </div>
             <div class="function" id="randomization_test">
               <h2>randomization_test</h2>
               <div class="shaded">Parameters:</div>
