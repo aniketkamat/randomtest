@@ -80,7 +80,6 @@
                 <li><a href="install.html">Install</a></li>
                 <li><a href="documentation.html">Documentation</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <h1>fastrerandomize</h1>
@@ -99,7 +98,7 @@
             <div class="function" id="build_backend">
             <h2>build_backend</h2>
                 <div class="shaded">Parameters:</div>
-                <ol class="input-output"> <b>conda_env:</b>(default = `"fastrerandomize"`) Name of the conda environment in which to place the backends.</ol> 
+                <ol class="input-output"> <b>conda_env:</b> (default = `"fastrerandomize"`) Name of the conda environment in which to place the backends.</ol> 
                 <ol class="input-output"> <b>conda:</b> (default = `auto`) The path to a conda executable. Using `"auto"` allows reticulate to attempt to automatically find an appropriate conda binary. </ol>
                 <div class="shaded">Returns:</div>
                 <ol class="input-output"> <b>NULL:</b> Invisibly returns NULL; this function is used for its side effects of creating and configuring a conda environment for `fastrerandomize`. This function requires an Internet connection. </ol>
@@ -129,12 +128,12 @@
             <div class="function" id="fastrerandomize_class">
             <h2>fastrerandomize_class</h2>
                 <div class="shaded">Parameters:</div>
-                <ol class="input-output"> <b>randomizations:</b>A matrix or array where each row (or slice) represents one randomization.</ol> 
-                <ol class="input-output"> <b>balance:</b>A numeric vector or similar object holding balance statistics for each randomization, or \code{NULL} if not applicable.</ol>
-                <ol class="input-output"> <b>fastrr_env :</b>Associated \code{fastrr_env} environment.</ol> 
-                <ol class="input-output"> <b>call:</b>The function call, if you wish to store it for reference (optional).</ol> 
+                <ol class="input-output"> <b>randomizations:</b> A matrix or array where each row (or slice) represents one randomization.</ol> 
+                <ol class="input-output"> <b>balance:</b> A numeric vector or similar object holding balance statistics for each randomization, or \code{NULL} if not applicable.</ol>
+                <ol class="input-output"> <b>fastrr_env :</b> Associated \code{fastrr_env} environment.</ol> 
+                <ol class="input-output"> <b>call:</b> The function call, if you wish to store it for reference (optional).</ol> 
                 <div class="shaded">Returns:</div>
-                <ol class="input-output"> <b>object:</b>An object of class \code{fastrerandomize_randomizations} </ol>
+                <ol class="input-output"> <b>object:</b> An object of class \code{fastrerandomize_randomizations} </ol>
             </div>
             <div class="function" id="randomization_test">
               <h2>randomization_test</h2>
